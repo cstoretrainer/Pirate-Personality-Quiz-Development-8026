@@ -1,0 +1,199 @@
+.app-container {
+  min-height: 100vh;
+  background-color: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.message {
+  font-size: 1.1rem;
+  color: #374151;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(251, 146, 60, 0.6);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(251, 146, 60, 0.8);
+}
+
+/* Disable text selection on buttons and interactive elements */
+button {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Enhanced touch targets for mobile */
+.touch-manipulation {
+  touch-action: manipulation;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Custom font classes */
+.font-creepster {
+  font-family: 'Creepster', cursive;
+}
+
+.font-rum {
+  font-family: 'Rum Raisin', cursive;
+}
+
+/* Ensure buttons are properly sized for touch */
+button {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Active states for better mobile feedback */
+button:active {
+  transform: scale(0.98);
+}
+
+/* Focus styles for accessibility */
+button:focus-visible {
+  outline: 2px solid #f97316;
+  outline-offset: 2px;
+}
+
+/* Enhanced responsive design */
+@media (max-width: 640px) {
+  .touch-manipulation {
+    min-height: 60px;
+  }
+  
+  button {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+}
+
+/* Utility for line clamping */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Parchment texture effect */
+.parchment-texture {
+  background-image: 
+    radial-gradient(circle at 25px 25px, rgba(139, 69, 19, 0.1) 2%, transparent 50%),
+    radial-gradient(circle at 75px 75px, rgba(160, 82, 45, 0.1) 2%, transparent 50%);
+  background-size: 100px 100px;
+}
+
+/* Rope border effect */
+.rope-border {
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 2px,
+    rgba(139, 69, 19, 0.2) 2px,
+    rgba(139, 69, 19, 0.2) 4px
+  );
+}
+
+/* Enhanced button animations */
+.pirate-button {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.pirate-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.pirate-button:hover::before {
+  left: 100%;
+}
+
+/* Floating animation for decorative elements */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Compass rotation animation */
+@keyframes compass-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.compass-spin {
+  animation: compass-spin 20s linear infinite;
+}
+
+/* Enhanced button hover effects */
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Responsive design for buttons */
+@media (max-width: 768px) {
+  .pirate-button {
+    min-height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pirate-button {
+    min-height: 90px;
+    padding: 1.5rem 1rem;
+  }
+}
